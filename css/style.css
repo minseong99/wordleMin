@@ -1,0 +1,7 @@
+@import "header.css";
+@import "main.css";
+@import "footer.css";
+
+:root {
+  --border-line: rgb(211, 214, 218);
+}
