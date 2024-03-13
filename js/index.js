@@ -48,8 +48,8 @@ function appStart() {
         `.board-block[data-index='${attempts}${index - 1}']`
       );
       preBlock.innerText = "";
+      index -= 1;
     }
-    if (index !== 0) index -= 1;
   };
   const handleKeyDown = (event) => {
     const key = event.key.toUpperCase();
