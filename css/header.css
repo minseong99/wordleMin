@@ -15,6 +15,7 @@ header {
   align-items: center;
   height: 25px;
   width: 30px;
+  cursor: pointer;
 }
 
 .header__info-title {
@@ -42,6 +43,7 @@ header {
   margin-right: 60px;
 }
 .header__info-options-icons img {
+  cursor: pointer;
   width: 40px;
   height: 35px;
   display: flex;
@@ -51,6 +53,7 @@ header {
 }
 
 .header__info-options-sub {
+  cursor: pointer;
   border: 1px solid black;
   border-radius: 15px;
   padding: 7px 20px 7px 20px;
