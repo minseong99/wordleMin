@@ -4,7 +4,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 20px 10px 20px;
+  margin: 0 10px 0 10px;
   border-top: 1px solid var(--border-line);
   border-bottom: 1px solid var(--border-line);
 }
@@ -13,22 +13,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 25px;
   width: 30px;
-  height: 15px;
 }
 
 .header__info-title {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 35px;
-  padding-left: 255px;
+  padding-left: 300px;
+  margin-left: 50px;
 }
 
 .header__info-options {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  margin-left: 100px;
 }
 
 .header__info-options-icons {
