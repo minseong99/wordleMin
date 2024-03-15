@@ -31,6 +31,7 @@ function appStart() {
       );
       const chEntered = block.innerText;
       const correctLetter = correct[i];
+
       //add
       const keyBoard = document.querySelector(
         `.key-board-block[data-key='${block.innerText}']`
@@ -38,17 +39,17 @@ function appStart() {
 
       if (chEntered === correctLetter) {
         block.style.background = "#6AAA64";
-        keyBoard.style.background = "#6AAA64";
+        keyBoard.style.background = "#6AAA64"; // add
         correctCnt += 1;
       } else if (correct.includes(chEntered)) {
         block.style.background = "#C9B458";
-        keyBoard.style.background = "#C9B458";
+        keyBoard.style.background = "#C9B458"; // add
       } else {
         block.style.background = "#788C7E";
-        keyBoard.style.background = "#788C7E";
+        keyBoard.style.background = "#788C7E"; // add
       }
       block.style.color = "white";
-      keyBoard.style.color = "white";
+      keyBoard.style.color = "white"; // add
     }
     if (correctCnt === 5) gameOver();
     else nextLine();
@@ -68,6 +69,7 @@ function appStart() {
     const thisBlock = document.querySelector(
       `.board-block[data-index='${attempts}${index}']`
     );
+    console.log(thisBlock);
 
     if (event.key === "Backspace") handleBackspace();
     else if (index === 5) {
@@ -78,6 +80,25 @@ function appStart() {
       index += 1;
     }
   };
+
+  //add
+  const handleClick = (event) => {
+    const key = event.target.dataset.key;
+    const thisBlock = document.querySelector(
+      `.board-block[data-index='${attempts}${index}']`
+    );
+    console.log(thisBlock);
+
+    if (key === "BACK") handleBackspace();
+    else if (index === 5) {
+      if (key === "ENTER") handleEnterKey();
+      else return;
+    } else if (key !== "ENTER") {
+      thisBlock.innerText = key;
+      index += 1;
+    }
+  };
+
   const startTimer = () => {
     const startTime = new Date();
 
@@ -95,6 +116,8 @@ function appStart() {
 
   startTimer();
   window.addEventListener("keydown", handleKeyDown);
+  //add
+  window.addEventListener("click", handleClick);
 }
 
 appStart();

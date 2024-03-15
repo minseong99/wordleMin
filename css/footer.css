@@ -29,6 +29,7 @@ footer {
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.25em;
+  cursor: pointer;
 }
 
 footer .row-2 .col-0 {
