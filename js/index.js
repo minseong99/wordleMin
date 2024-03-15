@@ -83,20 +83,22 @@ function appStart() {
 
   //add
   const handleClick = (event) => {
-    const key = event.target.dataset.key;
-    const thisBlock = document.querySelector(
-      `.board-block[data-index='${attempts}${index}']`
-    );
-    console.log(thisBlock);
+    if (event.target.className === "key-board-block") {
+      const key = event.target.dataset.key;
+      const thisBlock = document.querySelector(
+        `.board-block[data-index='${attempts}${index}']`
+      );
+      console.log(thisBlock);
 
-    if (key === "BACK") handleBackspace();
-    else if (index === 5) {
-      if (key === "ENTER") handleEnterKey();
-      else return;
-    } else if (key !== "ENTER") {
-      thisBlock.innerText = key;
-      index += 1;
-    }
+      if (key === "BACK") handleBackspace();
+      else if (index === 5) {
+        if (key === "ENTER") handleEnterKey();
+        else return;
+      } else if (key !== "ENTER") {
+        thisBlock.innerText = key;
+        index += 1;
+      }
+    } else return;
   };
 
   const startTimer = () => {

@@ -32,10 +32,10 @@ footer {
   cursor: pointer;
 }
 
-footer .row-2 .col-0 {
+footer #ENTER {
   width: 65.41px;
   font-size: 13px;
 }
-footer .row-2 .col-8 {
+footer #BACK {
   width: 65.41px;
 }
