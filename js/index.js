@@ -31,13 +31,24 @@ function appStart() {
       );
       const chEntered = block.innerText;
       const correctLetter = correct[i];
+      //add
+      const keyBoard = document.querySelector(
+        `.key-board-block[data-key='${block.innerText}']`
+      );
+
       if (chEntered === correctLetter) {
         block.style.background = "#6AAA64";
+        keyBoard.style.background = "#6AAA64";
         correctCnt += 1;
-      } else if (correct.includes(chEntered))
+      } else if (correct.includes(chEntered)) {
         block.style.background = "#C9B458";
-      else block.style.background = "#788C7E";
+        keyBoard.style.background = "#C9B458";
+      } else {
+        block.style.background = "#788C7E";
+        keyBoard.style.background = "#788C7E";
+      }
       block.style.color = "white";
+      keyBoard.style.color = "white";
     }
     if (correctCnt === 5) gameOver();
     else nextLine();

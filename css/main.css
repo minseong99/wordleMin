@@ -22,6 +22,8 @@ main {
   justify-content: center;
   align-items: center;
   border: 3px solid var(--border-line);
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .timer {
