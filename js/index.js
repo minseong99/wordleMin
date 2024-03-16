@@ -14,6 +14,7 @@ function appStart() {
   };
   const gameOver = () => {
     window.removeEventListener("keydown", handleKeyDown);
+    window.removeEventListener("click", handleClick);
     displayGameover();
     clearInterval(timer);
   };
