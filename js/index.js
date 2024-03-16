@@ -70,7 +70,6 @@ function appStart() {
     const thisBlock = document.querySelector(
       `.board-block[data-index='${attempts}${index}']`
     );
-    console.log(thisBlock);
 
     if (event.key === "Backspace") handleBackspace();
     else if (index === 5) {
@@ -84,13 +83,15 @@ function appStart() {
 
   //add
   const handleClick = (event) => {
-    if (event.target.className === "key-board-block") {
+    if (
+      event.target.className === "key-board-block" ||
+      event.target.dataset.key === "BACK"
+    ) {
       const key = event.target.dataset.key;
 
       const thisBlock = document.querySelector(
         `.board-block[data-index='${attempts}${index}']`
       );
-      console.log(thisBlock);
 
       if (key === "BACK") handleBackspace();
       else if (index === 5) {
