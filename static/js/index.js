@@ -1,5 +1,3 @@
-const correct = "APPLE";
-
 let attempts = 0;
 let index = 0;
 let timer;
@@ -24,8 +22,13 @@ function appStart() {
     index = 0;
   };
 
-  const handleEnterKey = () => {
+  const handleEnterKey = async () => {
     let correctCnt = 0;
+    //서버에 요청을 보내는 비동기식 로직
+    const response = await fetch("/answer");
+    const correctStruct = await response.json();
+    const correct = correctStruct.answer;
+
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
         `.board-block[data-index='${attempts}${i}']`
